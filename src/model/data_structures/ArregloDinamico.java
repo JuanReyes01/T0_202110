@@ -8,7 +8,7 @@ package model.data_structures;
  * @param <T>
  *
  */
-public class ArregloDinamico<T> implements IArregloDinamico<> {
+public class ArregloDinamico<T extends Comparable<T>> implements IArregloDinamico<T> {
 		/**
 		 * Capacidad maxima del arreglo
 		 */
@@ -83,7 +83,7 @@ public class ArregloDinamico<T> implements IArregloDinamico<> {
 			// TODO implementar
 			// Recomendacion: Usar el criterio de comparacion natural (metodo compareTo()) definido en Strings.
 			T eliminado=null;
-			T[] nuevo = (T[])new Comparable[elementos.length]; 			
+			T[] nuevo = (T[]) new Comparable[elementos.length]; 			
 			int j = 0;
 			for(int i=0; i<elementos.length; i++){
 				if(elementos[i]!=null&&elementos[i].compareTo(dato)==0){
