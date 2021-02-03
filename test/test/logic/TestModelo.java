@@ -30,24 +30,47 @@ public class TestModelo {
 
 	@Test
 	public void testDarTamano() {
+		setUp2();
+		assertEquals(CAPACIDAD, modelo.darTamano());
 		// TODO
 	}
 
 	@Test
 	public void testAgregar() {
+		setUp2();
+		String[] s = new String[100];
+		for(int i=0; i<100;i++){
+			s[i]= ""+i;
+		}
+		try{
+			for(int i=0; i<100;i++){				
+				assertEquals(s[i],modelo.buscar(i+"") );
+			}
+		}catch (Exception e){
+			fail("Este metodo no debe lanzar excepción");
+		}
 		// TODO Completar la prueba
 	}
 
 	@Test
 	public void testBuscar() {
-		setUp2();
+		modelo.agregar("obj1");
+		assertEquals("obj1",modelo.buscar("obj1") );
 		// TODO Completar la prueba
 	}
 
 	@Test
 	public void testEliminar() {
 		setUp2();
-		// TODO Completar la prueba
+		try{
+			for(int i =0; i< CAPACIDAD;i++){
+				modelo.eliminar(""+i);
+			}
+			assertEquals(0,modelo.darTamano());
+		}catch (Exception e) {
+			fail("Este metodo no debe lanzar excepción");
+		}
+		
 		
 	}
 
