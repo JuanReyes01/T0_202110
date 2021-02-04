@@ -8,7 +8,7 @@ package model.data_structures;
  * @param <T>
  *
  */
-public class ArregloDinamico<T extends Comparable<T>> implements IArregloDinamico<T> {
+public class ArregloDinamico<T extends Comparable<T>> implements IArregloDinamico<T> { 
 		/**
 		 * Capacidad maxima del arreglo
 		 */
@@ -69,7 +69,7 @@ public class ArregloDinamico<T extends Comparable<T>> implements IArregloDinamic
 			T retorno=null;
 			boolean stop=false;
 			for(int i=0; i<elementos.length&&!stop; i++)
-				if(elementos[i].compareTo(dato)==0){
+				if(elementos[i].equals(dato)){
 					retorno = elementos[i];
 					stop=true;
 				}
@@ -86,7 +86,7 @@ public class ArregloDinamico<T extends Comparable<T>> implements IArregloDinamic
 			T[] nuevo = (T[]) new Comparable[elementos.length]; 			
 			int j = 0;
 			for(int i=0; i<elementos.length; i++){
-				if(elementos[i]!=null&&elementos[i].compareTo(dato)==0){
+				if(elementos[i]!=null&&elementos[i].equals(dato)){
 					eliminado = elementos[i];					
 				}
 				else if(elementos[i]!=null){
@@ -101,16 +101,19 @@ public class ArregloDinamico<T extends Comparable<T>> implements IArregloDinamic
 			return eliminado;
 		}
 
-		
+		 
+		public String invertir(String[] arreglo) {
+		    String temporal = null; 
+		   
+		    for (int i = 0; i < elementos.length / 2; i++) {
+		           temporal = arreglo[i];
+		               int j = elementos.length - i - 1;
+		      
+		    	arreglo[i] = arreglo[j];
+		      arreglo[j] = temporal;
+		    }
+		    return temporal;
+		  }
 
-	
-
-	
-
-	
-
-
-
-
-
-}
+			
+		}
