@@ -101,6 +101,14 @@ public class ArregloDinamico<T extends Comparable<T>> implements IArregloDinamic
 			return eliminado;
 		}
 
+		public void invertir() {
+			T[] invertida = ( T[]) new Comparable[elementos.length];
+			for(int i=tamanoAct; i>0;i--){
+				invertida[tamanoAct-i] = elementos[i-1]; 
+			}
+			elementos = invertida;
+		}
+
 		
 
 	

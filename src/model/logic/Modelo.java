@@ -11,7 +11,7 @@ public class Modelo {
 	/**
 	 * Atributos del modelo del mundo
 	 */
-	private IArregloDinamico datos;
+	private IArregloDinamico<Object> datos;
 	
 	/**
 	 * Constructor del modelo del mundo con capacidad predefinida
@@ -43,7 +43,7 @@ public class Modelo {
 	 * Requerimiento de agregar dato
 	 * @param dato
 	 */
-	public void agregar(String dato)
+	public void agregar(Object dato)
 	{	
 		datos.agregar(dato);
 	}
@@ -53,19 +53,27 @@ public class Modelo {
 	 * @param dato Dato a buscar
 	 * @return dato encontrado
 	 */
-	public String buscar(String dato)
+	public Object buscar(Object dato)
 	{
 		return datos.buscar(dato);
 	}
 	
 	/**
 	 * Requerimiento eliminar dato
+	 * @param <T>
 	 * @param dato Dato a eliminar
 	 * @return dato eliminado
 	 */
-	public String eliminar(String dato)
+	public Object eliminar(Object dato)
 	{
 		return datos.eliminar(dato);
+	}
+	
+	/**
+	 * Requerimiento invierte los datos
+	 */
+	public void invertir(){
+		datos.invertir();
 	}
 
 

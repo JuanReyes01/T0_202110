@@ -43,5 +43,9 @@ public interface IArregloDinamico<T>{
 	 */
 	T eliminar( T dato );	
 	
+	/**
+	 * Invierte los datos del arreglo
+	 */
+	public void invertir();
 
 }
