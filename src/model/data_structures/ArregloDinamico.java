@@ -101,19 +101,29 @@ public class ArregloDinamico<T extends Comparable<T>> implements IArregloDinamic
 			return eliminado;
 		}
 
-		 
-		public String invertir(String[] arreglo) {
-		    String temporal = null; 
-		   
-		    for (int i = 0; i < elementos.length / 2; i++) {
-		           temporal = arreglo[i];
-		               int j = elementos.length - i - 1;
-		      
-		    	arreglo[i] = arreglo[j];
-		      arreglo[j] = temporal;
-		    }
-		    return temporal;
-		  }
+/**
+ * Implementación original de Tales
+ */
+//		public void invertir() {
+//		    T temporal = null; 
+//		   
+//		    for (int i = 0; i < elementos.length / 2; i++) {
+//		           temporal = arreglo[i];
+//		               int j = elementos.length - i - 1;
+//		      
+//		    	arreglo[i] = arreglo[j];
+//		      arreglo[j] = temporal;
+//		    }
+//		    elementos = temporal;
+//		  }
 
+
+		public void invertir() {
+			T[] invertida = ( T[]) new Comparable[elementos.length];
+			for(int i=tamanoAct; i>0;i--){
+				invertida[tamanoAct-i] = elementos[i-1]; 
+			}
+			elementos = invertida;
+		}
 			
 		}

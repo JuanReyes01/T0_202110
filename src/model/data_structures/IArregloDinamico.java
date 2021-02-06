@@ -26,7 +26,7 @@ public interface IArregloDinamico<T extends Comparable<T>>{
 	 * Caso Especial: Si el arreglo esta lleno debe aumentarse su capacidad, agregar el nuevo dato y deben quedar multiples casillas disponibles para futuros nuevos datos.
 	 * @param dato nuevo elemento
 	 */
-	public void agregar( T dato );
+	 void agregar( T dato );
 		
 	/**
 	 * Buscar un dato en el arreglo.
@@ -43,6 +43,15 @@ public interface IArregloDinamico<T extends Comparable<T>>{
 	 */
 	T eliminar( T dato );	
 	
-	String invertir( String[] arreglo);	
+	/**
+	 * Implementacion original de Tales
+	 */
+//	void invertir( );	
+
+	/**
+	 * Invierte los datos del arreglo
+	 */
+	void invertir();
+
 
 }
